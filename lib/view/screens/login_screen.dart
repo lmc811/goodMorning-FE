@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:goodmorning/view/screens/navigation.dart';
 import 'package:goodmorning/viewmodels/login_viewmodel.dart';
-
+import 'package:goodmorning/models/repository/user_data_repository.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -10,6 +10,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +28,8 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.all(20.0),
               child: TextButton(
                 child: Image.asset('images/kakao_login_large_narrow.png'),
-                onPressed: () {
+                onPressed: () async{
+                  await UserDataRepository.getUserNumberApi();
                   signInWithKakao();
                   Navigator.of(context).pushReplacement(
                       MaterialPageRoute(builder: (context) => Navigation()));

@@ -4,6 +4,7 @@ import 'package:goodmorning/view/screens/pages/logout.dart';
 import 'package:goodmorning/view/screens/pages/none.dart';
 import 'package:goodmorning/view/screens/pages/number.dart';
 
+
 class Navigation extends StatefulWidget {
   const Navigation({super.key});
 
@@ -15,18 +16,18 @@ class _NavigationState extends State<Navigation> {
 
   int selectedIndex = 0;
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: NavigationBar(
         selectedIndex: selectedIndex,
-
         onDestinationSelected: (value) => setState(() {
           selectedIndex = value;
         }),
         destinations: [
           NavigationDestination(
-            icon: const Icon(Icons.email_rounded),
+            icon: const Icon(Icons.email_rounded,),
             label: "Email",
             // selectedIcon: Icon(
             //   Icons.email,
